@@ -1,0 +1,17 @@
+<div class="cards grid">
+
+    <% @restaurants.each do |restaurant| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant.id) %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= restaurant.category %></h6>
+        <p class="card-text"><%= restaurant.address %></p>
+        <%= link_to 'Laisser un avis', new_restaurant_review_path(restaurant.id), class:"card-link" %>
+        <%= link_to 'Détruire le restaurant', restaurant_path(restaurant.id), method: :delete, data: { confirm: "Sur ?"}, class:"card-link" %>
+      </div>
+    </div>
+
+  <% end %>
+    <%= link_to 'Create a new restaurant', new_restaurant_path %>
+
+</div>

@@ -1,0 +1,9 @@
+<h1 class="restaurant_title"> <%= @restaurant.name %></h1>
+
+<h2 class="restaurant_details">
+<%=  @restaurant.address%> - <%= @restaurant.category  %>
+</h2>
+
+<%= link_to 'Laisser un avis', new_restaurant_review_path(@restaurant) %>
+<%= link_to 'Editer', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Menu', restaurants_path %>
